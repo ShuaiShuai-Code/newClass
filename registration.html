@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>Registration</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-body">
+
+<div class="container">
+
+    <form class="form-signin" action="" method="get" id="signupForm">
+        <div class="form-signin-heading text-center">
+            <h1 class="sign-title">新用户注册</h1>
+            <img src="images/login-logo.png" alt=""/>
+        </div>
+
+
+        <div class="login-wrap">
+            <p>输入您的个人信息</p>
+            <input type="text" autofocus="" placeholder="手机号" class="form-control" name="phone">
+            <input type="text" autofocus="" placeholder="邮箱" class="form-control" name="email">
+            <input type="text" autofocus="" placeholder="学校(选填)" class="form-control" name="school">
+            <input type="text" autofocus="" placeholder="学号(选填)" class="form-control" name="studentId">
+            <div class="radios" name="identify" id="identify">
+                <label for="radio-01" class="label_radio col-lg-6 col-sm-6">
+                    <input type="radio" checked="" value="1" id="radio-01" name="sample-radio"> 学生
+                </label>
+                <label for="radio-02" class="label_radio col-lg-6 col-sm-6">
+                    <input type="radio" value="2" id="radio-02" name="sample-radio"> 教师
+                </label>
+            </div>
+
+            <p>输入您的帐户详细信息如下</p>
+            <input type="text" autofocus="" placeholder="用户名" class="form-control" name="username">
+            <input type="password" placeholder="密码" class="form-control" name="password" id="password">
+            <input type="password" placeholder="确认密码" class="form-control" name="confirm_password">
+            <label class="checkbox">
+                <input type="checkbox" value="agree this condition"> 我同意服务条款和隐私政策
+            </label>
+            <button type="submit" class="btn btn-lg btn-login btn-block" id="submit" href="" data-toggle="modal">
+                <i class="fa fa-check"></i>
+            </button>
+
+            <div class="registration">
+                已经注册。
+                <a href="login.html" class="">
+                    去登陆
+                </a>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+<!-- 格式错误-->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="wrongFormat" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">输入格式错误！</h4>
+            </div>
+            <div class="modal-body">
+                <p>请重新输入您的信息！</p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 注册成功 -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="success" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">注册成功！</h4>
+            </div>
+            <div class="modal-body">
+                <p>请重新登陆！</p>
+            </div>
+            <div class="modal-footer">
+                <botton class="btn btn-primary" type="button" href="login.html" id="confirm">确认</botton>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 注册失败-->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="fail" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">注册失败！</h4>
+            </div>
+            <div class="modal-body">
+                <p>请重新输入您的注册信息！</p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src="js/validation-init.js"></script>
+<script src="js/url.js"></script>
+<script>
+    //注册
+    $(function () {
+        $("#submit").click(function () {
+            var flag = signupValidator.form();
+            var registerUrl=url;
+            alert(flag);
+            if (flag) {
+                var identifier =$("#identify").val();
+                if (identifier=="1"){
+                    registerUrl+="student/register";
+                }else{
+                    registerUrl+="teacher/register";
+                }
+                var d = {};
+                var t = $("#signupForm").serializeArray();
+                $.each(t, function () {
+                    d[this.name] = this.value;
+                });
+                alert("提交数据：" + JSON.stringify(d));
+                $.ajax({
+                    type: "POST",
+                    url: registerUrl,  //等待ing
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify({
+                        "username":d["username"],
+                        "password":d["password"],
+                        "phone":d["phone"],
+                        "studentId":d["studentId"],
+                        "email":d["email"],
+                        "school":d["school"]
+                    }),
+                    async: false,
+                    dataType: "json",
+                    success: function (message) {
+                        var context = message["responseText"];
+                        var contextJson = JSON.parse(context);
+                        var code = contextJson["code"];
+                        alert(code);
+                        if (code == "1") {
+                            $("#submit").attr("href", "#success");
+                        } else{
+                            $("#submit").attr("href", "#fail");
+                        }
+                    },
+                    error: function (message) {
+                        $("#submit").attr("href", "");
+                        alert("未连接后端");
+                        alert(JSON.stringify(message));
+                    }
+                })
+            }else{
+                $("#submit").attr("href", "#wrongFormat");
+            }
+        })
+    })
+</script>
+</body>
+</html>

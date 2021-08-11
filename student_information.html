@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>个人信息页面</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="200" height="80"></a>
+           </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <div class="logo-icon text-center">
+               <a href="index.html"><img src="images/logo_icon.png" width="30" height="30"></a>
+           </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">Cyanobacteria</a></h4>
+                        <span>"你好~"</span>
+                    </div>
+                </div>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>退出登录</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="student_information.html"><i class="fa fa-bullhorn"></i> <span>个人资料</span></a></li>
+
+                <li><a href="stdent_course.html"><i class="fa fa-home"></i> <span>课程管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class="active"><a href="stdent_course.html">我的课程</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>个人作业</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="student_finished.html">已完成</a></li>
+                        <li><a href="student_notfinished.html">未完成</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="搜索并添加课程..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/photos/user-avatar.png" alt="" />
+                            薛志明
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-sign-out"></i>退出登录</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>我的个人信息</h3>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+
+            <div class="row">
+                <div class="col-md-10">
+                <section class="panel">
+                    <header class="panel-heading">
+                        My Information
+                    </header>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p class="text-warning">
+                                    姓名
+                                </p>
+                                <p class="text-transform">
+                                    学号
+                                </p>
+                                <p class="text-danger">
+                                    电话
+                                </p>
+                                <p class="text-info">
+                                    邮箱
+                                </p>
+                                <p class="text-success">
+                                    学校
+                                </p>
+
+                                
+                            </div>
+                            <div class="col-md-7">
+                        
+                                <p class="text-warning">
+                                    薛志明
+                                </p>
+                                <p class="text-transform">
+                                    2018303065
+                                </p>
+                                <p class="text-danger">
+                                    15617164608
+                                </p>
+                                <p class="text-info">
+                                    2531753718@qq.com
+                                </p>
+                                <p class="text-success">
+                                    西北工业大学
+                                </p>
+                            </div>
+    
+                        </div>
+                        <hr>   
+                        <button class="btn btn-info pull-right" type="button"  data-toggle="modal" href="#EditInfo">修改信息</button>
+                    </div>
+                    
+                </section>
+
+            </div>
+               
+
+
+
+
+
+        </div>
+    </div>
+    <!--body wrapper end-->
+
+     <!-- Modal -->
+     <div class="modal fade" id="EditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">个人信息编辑</h4>
+                </div>
+                <div class="modal-body">
+                        <div class="form-group">
+                            <form method="get" class="form-horizontal bucket-form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">学号</label>
+                                    <div class="col-sm-10">
+                                        <textarea class=" form-control" rows="1"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">学校</label>
+                                    <div class="col-sm-10">
+                                        <textarea class=" form-control" rows="1"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-primary" type="button">保存</button>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+
+
+    <!--footer section start-->
+    <footer class="sticky-footer">
+        2020 &copy; 养生下午茶
+    </footer>
+    <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

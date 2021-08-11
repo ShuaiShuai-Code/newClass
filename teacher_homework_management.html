@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>教师管理课程作业</title>
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="js/morris-chart/morris.css">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="200" height="80"></a>
+           </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <div class="logo-icon text-center">
+               <a href="index.html"><img src="images/logo_icon.png" width="30" height="30"></a>
+           </div>
+        <!--logo and iconic logo end-->
+
+
+       
+        <div class="left-side-inner">
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">Cyanobacteria</a></h4>
+                        <span>"你好~"</span>
+                    </div>
+                </div>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>退出登录</span></a></li>
+                </ul>
+            </div>
+             <!--sidebar nav start-->
+             <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class=""><a href="teacher_myinfo.html"><i class="fa fa-pagelines"></i> <span>个人信息</span></a></li>
+                <li class="menu-list nav-active"><a href="index.html"><i class="fa fa-home"></i> <span>课程管理</span></a>
+                    <ul class="sub-menu-list active">
+                        <li><a href="teacher_newclass.html">开设课程</a></li>
+                    </ul>
+                    <ul class="active sub-menu-list">
+                        <li><a href="teacher_allclass.html">已开课程</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+    <!-- main content start-->
+    <div class="main-content" >
+            
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/photos/user-avatar.png" alt="" />
+                            Cyanobacteria
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-sign-out"></i>退出登录</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+        
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <div class="bgimg">
+                <div class="panel widget-info-one">
+                    <div class="avatar-img">
+                        <img src="images\sample.png" alt="Pulpit rock" width="304" height="228"/>
+                    </div>
+                
+                    
+                </div>
+            </div>
+            <h3>作业1：ER图</h3>
+            <div>
+                <strong>发布时间：</strong>2021/12/8 14:12:43<br>
+                <strong>截止时间：</strong>2021/12/8 14:12:43<br> 
+            </div> 
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <section class="panel">
+                <header class="panel-heading custom-tab dark-tab">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#problem" data-toggle="tab">统计分析</a>
+                        </li>
+                        <li class="">
+                            <a href="#admit" data-toggle="tab">提交情况</a>
+                        </li>
+                        <li class="">
+                            <a href="#check" data-toggle="tab">作业批改</a>
+                        </li>
+                        
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="problem">
+                            <!--统计分析-->
+                            <!--饼图-->
+                            <div class="col-sm-6">
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        提交比例图
+                                    </header>
+                                    <div class="panel-body">
+                                        <div id="graph-donut"></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <!--条形图-->
+                            <div class="col-sm-6">
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        客观题正确率
+                                    </header>
+                                    <div class="panel-body">
+                                        <div id="graph-bar"></div>
+                                    </div>
+                                </section>
+                            </div> 
+                            
+                        </div>
+                        <div class="tab-pane" id="admit">
+                           <!--查看提交情况-->
+                           <section class="panel">
+                            <header class="panel-heading custom-tab">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#admitstu" data-toggle="tab">
+                                            <i class="fa fa-user"></i>
+                                            已提交学生
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#unadmitstu" data-toggle="tab">
+                                            <i class="fa fa-envelope-o"></i>
+                                            未提交学生
+                                        </a>
+                                    </li>
+                                </ul>
+                            </header>
+                            <div class="panel-body">
+                                <div class="tab-content">
+                                   
+                                    <div class="tab-pane active" id="admitstu">
+                                        <!--已提交学生-->
+                                        <div class="col-sm-10">
+                                            <section class="panel">
+                                                <header class="panel-heading">
+                                                    已提交学生
+                                                </header>
+                                                <div class="panel-body">
+                                                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>姓名</th>
+                                                            <th>学号</th>
+                                                            <th>手机号</th>
+                                                            
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="">
+                                                            <td class="center">1</td>
+                                                            <td>李晨筱</td>
+                                                            <td>2018303065</td>
+                                                            <td>18064340877</td>
+                                                        </tr>
+                                                        <tr class="">
+                                                        <td class="center">2</td>
+                                                            <td>褚原</td>
+                                                            <td>2018303065</td>
+                                                            <td>18064340866</td>
+                                                        </tr>
+                                                        <tr class="">
+                                                            <td class="center">3</td>
+                                                                <td>陈心琢</td>
+                                                                <td>2018303065</td>
+                                                                <td>18064540866</td>
+                                                            </tr>
+                                                        </tbody>
+                                                        </table>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane " id="unadmitstu">
+                                        <!--未提交学生-->
+                                        <div class="col-sm-10">
+                                            <section class="panel">
+                                                <header class="panel-heading">
+                                                    未提交学生
+                                                </header>
+                                                <div class="panel-body">
+                                                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>姓名</th>
+                                                            <th>学号</th>
+                                                            <th>手机号</th>
+                                                            
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="">
+                                                                <td class="center">1</td>
+                                                                <td>高漪澜</td>
+                                                                <td>2018303062</td>
+                                                                <td>18064340817</td>
+                                                            </tr>                                                            
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        </div>
+                        <div class="tab-pane" id="check">
+                            <!--查看批改情况-->
+                            <section class="panel">
+                             <header class="panel-heading custom-tab">
+                                 <ul class="nav nav-tabs">
+                                     <li class="active">
+                                         <a href="#already" data-toggle="tab">
+                                             <i class="fa fa-user"></i>
+                                             已批改学生
+                                         </a>
+                                     </li>
+                                     <li class="">
+                                         <a href="#notyet" data-toggle="tab">
+                                             <i class="fa fa-envelope-o"></i>
+                                             未批改学生
+                                         </a>
+                                     </li>
+                                 </ul>
+                             </header>
+
+                             <div class="panel-body">
+                                 <div class="tab-content">
+                                     <div class="tab-pane active" id="already">
+                                         <!--已批改学生-->
+                                         <div class="col-sm-10">
+                                             <section class="panel">
+                                                 <header class="panel-heading">
+                                                     已批改学生
+                                                 </header>
+                                                 <div class="panel-body">
+                                                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                                         <thead>
+                                                         <tr>
+                                                             <th>#</th>
+                                                             <th>姓名</th>
+                                                             <th>提交时间</th>
+                                                             
+                                                         </tr>
+                                                         </thead>
+                                                         <tbody>
+                                                         <tr class="">
+                                                         <td class="center">1</td>
+                                                             <td>褚原</a></td>
+                                                             <td>2020/10/11 &nbsp &nbsp &nbsp  
+                                                                <a href="teacher_check_homework.html">查看</a>
+                                                            </td>
+                                                             
+                                                         </tr>
+                                                         <tr class="">
+                                                             <td class="center">2</td>
+                                                             <td>>陈心琢</a></td>
+                                                             <td>2020/10/11 &nbsp &nbsp &nbsp  
+                                                                <a href="teacher_check_homework.html">查看</a>
+                                                             </td>
+                                                             </tr>
+                                                         </tbody>
+                                                         </table>
+                                                 </div>
+                                             </section>
+                                         </div>
+                                     </div>
+                                     <div class="tab-pane" id="notyet">
+                                         <!--未批改学生-->
+                                         <div class="col-sm-10">
+                                             <section class="panel">
+                                                 <header class="panel-heading">
+                                                     未批改学生
+                                                 </header>
+                                                 <div class="panel-body">
+                                                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                                         <thead>
+                                                         <tr>
+                                                             <th>#</th>
+                                                             <th>姓名</th>
+                                                             <th>提交时间</th>
+                                                             
+                                                         </tr>
+                                                         </thead>
+                                                         <tbody>
+                                                            <tr class="">
+                                                                <td class="center">1</td>
+                                                                <td>李晨筱1</a></td>
+                                                                <td>
+                                                                    2020/10/15 &nbsp &nbsp &nbsp 
+                                                                        <a href="teacher_correct_homework.html">批改</a>
+                                                                    
+                                                                </td>
+                                                             </tr>   
+                                                             <tr class="">correct
+                                                                <td class="center">1</td>
+                                                                <td>李晨筱2</a></td>
+                                                                <td>2020/10/15 &nbsp &nbsp &nbsp  
+                                                                    <a href="teacher_correct_homework.html">批改</a></td>
+                                                             </tr>     
+                                                             <tr class="">
+                                                                <td class="center">1</td>
+                                                                <td>李晨筱3</a></td>
+                                                                <td>2020/10/15 &nbsp &nbsp &nbsp  
+                                                                    <a href="teacher_correct_homework.html">批改</a></td>
+                                                             </tr>     
+                                                             
+                                                        </tbody>
+                                                         </table>
+                                                 </div>
+                                             </section>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </section>
+                         </div>  
+                    </div>
+                </div>
+            </section>   
+        </div>
+        <!--body wrapper end-->
+
+    
+         <!--footer section start-->
+         <footer class="sticky-footer">
+            2020 &copy; 养生下午茶
+        </footer>
+        <!--footer section end-->
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+<!--script for editable table-->
+<script src="js/editable-table.js"></script>
+<!--data table-->
+<script type="text/javascript" src="js/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
+<!--Morris Chart-->
+<script src="js/morris-chart/morris.js"></script>
+<script src="js/morris-chart/raphael-min.js"></script>
+<script src="js/morris-chart/morris.init.js"></script>
+
+<!-- END JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        EditableTable.init();
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>创建新作业</title>
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+    <!--pickers css-->
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker/css/datepicker-custom.css" />
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-timepicker/css/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="teacher_myinfo.html"><img src="images/logo.png" width="200" height="80"></a>
+           </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <div class="logo-icon text-center">
+               <a href="teacher_myinfo.html"><img src="images/logo_icon.png" width="30" height="30"></a>
+           </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">Cyanobacteria</a></h4>
+                        <span>"你好~"</span>
+                    </div>
+                </div>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>退出登录</span></a></li>
+                </ul>
+            </div>
+             <!--sidebar nav start-->
+             <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class=""><a href="teacher_myinfo.html"><i class="fa fa-pagelines"></i> <span>个人信息</span></a></li>
+                <li class="menu-list nav-active"><a href="index.html"><i class="fa fa-home"></i> <span>课程管理</span></a>
+                    <ul class="sub-menu-list active">
+                        <li><a href="teacher_newclass.html">开设课程</a></li>
+                    </ul>
+                    <ul class="active sub-menu-list">
+                        <li><a href="teacher_allclass.html">已开课程</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/photos/user-avatar.png" alt="" />
+                            Cyanobacteria
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-sign-out"></i>退出登录</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>发布新作业</h3>
+            <h4>课程：数据库系统</h4>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+            <div class="col-md-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        课程基本信息设置
+                        <div class="panel-body">
+                            <button class="btn btn-info" type="button"  data-toggle="modal" href="#Modalobj">新建主观题目</button>
+                            <button class="btn btn-success" type="button"  data-toggle="modal" href="#Modalsub">新建客观题目</button>
+                        </div>
+                    </header>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modalobj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form class="modal-content" method="get" id="signupForm">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">主观题目</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-horizontal bucket-form">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label col-lg-2" >题目分值</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control m-bot15" name="score">
+                                                    <option value="5">5</option>
+                                                    <option value="10">10</option>
+                                                    <option value="15">15</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">题目描述</label>
+                                            <div class="col-sm-10">
+                                                <textarea class=" form-control" rows="6" name="description"></textarea>
+                                            </div>
+                                            <div class="col-sm-10  control-label pull-right">
+                                                <input type="file" class="default">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >参考答案</label>
+                                            <div class="col-sm-10">
+                                                <textarea rows="6" class="form-control" name="solution"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn btn-primary" type="button" id="subjectiveAdd">保存</button>
+                                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- modal -->
+
+                     <!-- Modal -->
+                     <div class="modal fade" id="Modalsub" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">客观题目</h4>
+                                </div>
+                                <form class="modal-body" id="forgetForm">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label col-lg-2">题目分值</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control m-bot15" name="score">
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal bucket-form">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">题目描述</label>
+                                            <div class="col-sm-10">
+                                                <textarea class=" form-control" rows="6" name="description"></textarea>
+                                            </div>
+                                            <div class="col-sm-10  control-label pull-right">
+                                                <input type="file" class="default">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-2">选项数目</label>
+                                            <div class="col-md-9">
+                                                <div id="spinner">
+                                                    <div class="input-group" style="width:150px;">
+                                                        <div class="spinner-buttons input-group-btn">
+                                                            <button type="button" class="btn spinner-up btn-primary" id="plus">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                        <input type="text" class="spinner-input form-control" maxlength="3" readonly name="number">
+                                                        <div class="spinner-buttons input-group-btn">
+                                                            <button type="button" class="btn spinner-down btn-warning" id="minus">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             <span class="help-block">
+                                                with step: 1
+                                             </span>
+                                            </div>
+                                        </div>
+
+                                    <div class="form-horizontal bucket-form">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">题目选项</label>
+                                            <div class="col-sm-10 icheck minimal" id="optionArea">
+                                                <div class="radio single-row" id="option1">
+                                                    <input tabindex="3" type="radio"  value="1" name="solution" checked>
+                                                    <textarea rows="1" class="form-control" name="option1"></textarea>
+                                                </div>
+                                                <div class="radio single-row" id="option2">
+                                                    <input tabindex="3" type="radio"  value="2" name="solution">
+                                                    <textarea rows="1" class="form-control" name="option2"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn btn-primary" type="button" id="objectiveAdd">保存</button>
+                                    <button data-dismiss="modal" class="btn btn-default" type="button" id="add">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal -->
+
+                    <!--newModal-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="Quittip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">退出提醒</h4>
+                                </div>
+                                <div class="modal-body">
+                                    您确定退出发布吗，退出后编辑的内容将丢失。
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn btn-primary" type="button" id="add">确定退出</button>
+                                    <button data-dismiss="modal" class="btn btn-default" type="button" id="add">继续编辑</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--modal-->
+                    <div class="panel-body">
+                        <form class="form-horizontal  " action="#">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">截止时间</label>
+                                <div class="col-md-4">
+                                    <div data-date="2012-12-21T15:25:00Z" class="input-group date form_datetime-adv">
+                                        <input type="text" class="form-control" readonly="" size="16">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary date-reset"><i class="fa fa-times"></i></button>
+                                            <button type="button" class="btn btn-success date-set"><i class="fa fa-calendar"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">答案发布时间</label>
+                                <div class="col-md-4">
+                                    <div data-date="2012-12-21T15:25:00Z" class="input-group date form_datetime-adv">
+                                        <input type="text" class="form-control" readonly="" size="16">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary date-reset"><i class="fa fa-times"></i></button>
+                                            <button type="button" class="btn btn-success date-set"><i class="fa fa-calendar"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">作业名称</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="panel-body pull-right">
+                            <button class="btn btn-primary" type="button" href="">发布作业</button>
+                            <button class="btn btn-default" type="button"  data-toggle="modal" href="#Quittip" href="">退出发布</button>
+                        </div>
+                    </div>
+
+                </section>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default" id="paper">
+                            <div class="panel-heading">
+                                作业详情预览
+                                <span class="tools pull-right">
+                                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                 </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+        <!--确认界面-->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="checked" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">确认要删除本题？</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>删除后将不可恢复，请慎重考虑！</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        <botton class="btn btn-primary" type="button" data-dismiss="modal" id="confirmSubmit">确认</botton>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer section start-->
+        <footer class="sticky-footer">
+            2020 &copy; 养生下午茶
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+
+<!--pickers plugins-->
+<script type="text/javascript" src="js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<!--spinner-->
+<script type="text/javascript" src="js/fuelux/js/spinner.min.js"></script>
+<script src="js/spinner-init.js"></script>
+<!--pickers initialization-->
+<script src="js/pickers-init.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src="js/validation-init.js"></script>
+
+<!---->
+<script type="text/javascript" src="js/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="js/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        $('.wysihtml5').wysihtml5();
+    });
+</script>
+<script>
+    $(function () {
+
+        var index = 0;
+        var count = 1;
+        //主观题增加
+        $("#subjectiveAdd").on("click", function () {
+            var flag = signupValidator.form();
+            alert(flag);
+            if (flag) {
+                var d = {};
+                var t = $("#signupForm").serializeArray();
+                $.each(t, function () {
+                    d[this.name] = this.value;
+                });
+                var problem = $("<div class=\"panel-body\" id='subject" + index + "'>\n" +
+                    "                                <hr><div>\n" +
+                    "                                    <div class=\"row\">\n" +
+                    "                                        <div class=\"col-md-6\">\n" +
+                    "                                            <h3>题目</h3>\n" +
+                    "                                            <h4>" + d["score"] + "</h4>\n" +
+                    "                                            <div class=\"well\">" + d["description"] + "</div>\n" +
+                    "                                        </div>\n" +
+                    "                                        <div class=\"col-md-6\">\n" +
+                    "                                            <h3>参考答案</h3>\n" +
+                    "                                            <hr>\n" +
+                    "                                            <p>" + d["solution"] + "</p>\n" +
+                    "                                        </div>\n" +
+                    "                                    </div>\n" +
+                    "                                    <div class=\"pull-right\">\n" +
+                    "                                        <button class=\"btn btn-primary subjectDelete\" type=\"button\" data-toggle=\"modal\" href=\"#checked\" value='" + index + "'>删除</button>\n" +
+                    "                                    </div>\n" +
+                    "                                </div>");
+                $("#paper").append(problem);
+                count++;
+                index++;
+                $(".subjectDelete").on("click", function () {
+                    var now = $(this).val();
+                    $("#confirmSubmit").click(function () {
+                        $("#subject" + now).remove();
+                        count--;
+                    })
+                })
+            } else {
+                return;
+            }
+        })
+        //客观题增加
+        var objectOptions = 2; //选项数目
+        var obtionLabel;    //选项答案标志
+        var objectIndex=0;
+        var objectCount=1;
+        $("#objectiveAdd").click(function () {
+            var flag=forgetValidator.form();
+            if(flag) {
+                var d = {};
+                var t = $("#forgetForm").serializeArray();
+                $.each(t, function () {
+                    d[this.name] = this.value;
+                })
+                alert(JSON.stringify(d));
+                var problem="<form><div class=\"panel-body\" id='object"+objectIndex+"'>\n" +
+                    "                                <hr><div>\n" +
+                    "                                    <div class=\"row\">\n" +
+                    "                                        <div class=\"col-md-8\">\n" +
+                    "                                            <h3>题目</h3>\n" +
+                    "                                            <h4>分值："+d["score"]+"</h4>\n" +
+                    "                                            <div class=\"well\">"+d["description"]+"</div>\n" +
+                    "                                        </div>\n" +
+                    "                                        <div class=\"col-md-10\">\n" +
+                    "                                            <h3>题目选项</h3>\n" +
+                    "                                            <div class=\"col-sm-10 icheck minimal\">";
+                for(var i=1;i<=objectOptions;i++){
+                    var optionDescription;
+                    switch (i) {
+                        case 1: optionDescription=d["option1"];
+                        break;
+                        case 2: optionDescription=d["option2"];
+                        break;
+                        case 3: optionDescription=d["option3"];
+                        break;
+                        case 4: optionDescription=d["option4"];
+                        break;
+                    }
+                    if(i==d["solution"]){
+                        problem+="<div class=\"radio single-row\">\n" +
+                            "                                                    <input tabindex=\"3\" type=\"radio\"  checked=\"checked\" name=\"demo-radio\" disabled>\n" +
+                            "                                                    <p>\n" +
+                            "                                                        <text>"+optionDescription+"</text>\n" +
+                            "                                                    </p>\n" +
+                            "                                                </div>";
+                    }else{
+                        problem+= "                                                <div class=\"radio single-row\">\n" +
+                            "                                                    <input tabindex=\"3\" type=\"radio\"  name=\"demo-radio\" disabled>\n" +
+                            "                                                    <p>\n" +
+                            "                                                        <text>"+optionDescription+"</text>\n" +
+                            "                                                    </p>\n" +
+                            "                                                </div>";
+                    }
+                }
+                problem+="</div>\n" +
+                    "                                        </div>\n" +
+                    "                                    </div>\n" +
+                    "                                    <div class=\"pull-right\">\n" +
+                    "                                        <button class=\"btn btn-primary objectDelete\" type=\"button\" href=\"#checked\" data-toggle=\"modal\" value='" + objectIndex + "'>删除</button>\n" +
+                    "                                    </div>\n" +
+                    "                                </div>\n" +
+                    "                            </div></form>";
+                $("#paper").append(problem);
+                objectCount++;
+                objectIndex++;
+                $(".objectDelete").on("click", function () {
+                    var now = $(this).val();
+                    $("#confirmSubmit").click(function () {
+                        $("#object" + now).remove();
+                        objectCount--;
+                    })
+                })
+            }else {
+                return;
+            }
+        })
+        //选项增加
+        $("#plus").click(function () {
+            if (objectOptions == 4) {
+                return;
+            }else {
+                objectOptions++;
+                /*
+                switch (objectOptions) {
+                    case 3: obtionLabel="C";
+                    break;
+                    case 4: obtionLabel="D";
+                    break;
+                }*/
+                var option = "<div class=\"radio single-row\" id='option"+objectOptions+"'>\n" +
+                    "                                                    <input tabindex=\"3\" type=\"radio\"  value=\""+objectOptions+"\" name=\"solution\">\n" +
+                    "                                                    <textarea rows=\"1\" class=\"form-control\" name=\"option"+objectOptions+"\"></textarea>\n" +
+                    "                                                </div>"
+                $("#optionArea").append(option);
+            }
+        })
+        $("#minus").click(function () {
+            if (objectOptions == 2) {
+                return;
+            }else {
+                $("#option"+objectOptions).remove();
+                objectOptions--;
+            }
+        })
+        //提交试卷
+
+    })
+</script>
+</body>
+</html>
